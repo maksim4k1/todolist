@@ -50,4 +50,7 @@ body{
 	--main-bg-white: #FFFBE3;
 	--main-bg-grey: #AEAEAE;
 	--main-dark-bg: rgba(0, 0, 0, 0.5);
+	--main-yellow-hover: #E1C474;
+	--main-grey-hover: #969696;
+	--main-red-hover: #CC4D4D;
 }
