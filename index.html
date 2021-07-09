@@ -18,7 +18,34 @@
 <body>
     <!----------------------------------------------S T A R T   C O N T E N T-------------------------------------------->
     <main class="content">
-        
+        <section class="todolist">
+            <div class="todolist__container container">
+                <nav class="todolist__navigation">
+                    <div class="todolist__info">
+                        <h1 class="todolist__logo title">Todolist</h1>
+                        <h4 class="todolist__name title">By name surname</h4>
+                    </div>
+                    <button class="todolist__button">Создать новую задачу</button>
+                </nav>
+                <h2 class="todolist__title title">Список задач</h2>
+                <ul class="todolist__list">
+                    <li class="todolist__task">
+                        <div class="todolist__content">
+                            <h3 class="todolist__content-title">Заголовок задачи</h3>
+                            <p class="todolist__content-text">Более длинное описание задачи на несолько строчек, может быть даже на 4. Более длинное описание задачи на несолько строчек, может быть даже на 4</p>
+                        </div>
+                        <div class="todolist__done">
+                            <input type="checkbox" name="done" id="task-1" class="todolist__done-input">
+                            <label for="task-1" class="todolist__done-button"></label>
+                        </div>
+                        <div class="todolist__task-buttons">
+                            <button class="todolist__task-button"><img src="img/svg/edit-icon.svg" alt="Изменить">изменить</button>
+                            <button class="todolist__task-button"><img src="img/svg/delete-icon.svg" alt="Удалить"></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
     <!----------------------------------------------E N D   C O N T E N T--------------------------------------------->
     <!-- ====================S C R I P T===================== -->
