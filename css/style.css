@@ -66,8 +66,14 @@
 }
 .modal__textarea {
     height: 100px;
-    margin: 0 0 19px;
+    margin: 0 0 10px;
     resize: none;
+}
+.modal__error{
+    margin: 0 0 16px;
+    color: var(--main-red);
+    font-size: 12px;
+    font-weight: 600;
 }
 .modal__button {
     height: 40px;
@@ -221,7 +227,7 @@
     .todolist__task-button:hover>svg>path{
         fill: var(--main-light-blue);
     }
-    .todolist__task-button_delete:hover>svg>path{
+    .todolist__task-button_delete-task:hover>svg>path{
         fill: var(--main-red);
     }
 }
@@ -232,9 +238,6 @@
 }
 
 @media (hover){
-    .add-new-task__button_cancel:hover, .edit-task__button_cancel:hover, .delete-task__button_cancel:hover{
-        background: var(--main-grey-hover);
-    }
     .add-new-task__button:hover{
         background: var(--main-blue);
     }
@@ -243,6 +246,9 @@
     }
     .delete-task__button_red:hover{
         background: var(--main-red-hover);
+    }
+    .add-new-task__button_cancel:hover, .edit-task__button_cancel:hover, .delete-task__button_cancel:hover{
+        background: var(--main-grey-hover);
     }
 }
 
