@@ -24,6 +24,8 @@
 .todolist__button {
     width: 287px;
     height: 40px;
+    margin: 0 0 19px;
+    font-weight: 600;
     background: var(--main-yellow);
     border-radius: 4px;
     transition: background 0.3s;
@@ -39,7 +41,7 @@
 }
 .todolist__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 19px;
     grid-row-gap: 19px;
 }
@@ -135,5 +137,31 @@
     }
     .todolist__task-button_delete:hover>svg>path{
         fill: var(--main-red);
+    }
+}
+
+/* MEDIA */
+@media screen and (max-width: 768px) {
+    .content{
+        padding: 17px 0 19px;
+    }
+    .todolist__navigation{
+        margin: 0 0 31px;
+        flex-flow: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .todolist__logo{
+        font-size: 40px;
+    }
+    .todolist__button{
+        margin: 0;
+    }
+    .todolist__title{
+        margin: 0 0 20px;
+        font-size: 18px;
+    }
+    .todolist__list{
+        grid-template-columns: 1fr;
     }
 }
