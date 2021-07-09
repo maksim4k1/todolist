@@ -28,14 +28,18 @@
                     </div>
                     <button class="todolist__button">Создать новую задачу</button>
                     <div class="add-new-task modal">
-                        <div class="add-new-task__content">
-                            <h5 class="add-new-task__title">Создать задачу</h5>
-                            <button class="add-new-task__close-button"></button>
-                            <form class="add-new-task__form">
-                                <input type="task-title" class="add-new-task__input" placeholder="заголовок">
-                                <textarea name="task-deskription" class="add-new-task__textarea" placeholder="описание"></textarea>
-                                <button class="add-new-task__button">Сохранить</button>
-                                <button class="add-new-task__button add-new-task__button_cancel">Отмена</button>
+                        <div class="add-new-task__content modal__content">
+                            <h5 class="add-new-task__title modal__title">Создать задачу</h5>
+                            <button class="add-new-task__close-button modal__close-button">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
+                                </svg>
+                            </button>
+                            <form class="add-new-task__form modal__form">
+                                <input type="task-title" class="add-new-task__input modal__input" placeholder="заголовок">
+                                <textarea name="task-deskription" class="add-new-task__textarea modal__textarea" placeholder="описание"></textarea>
+                                <button class="add-new-task__button modal__button">Сохранить</button>
+                                <button class="add-new-task__button add-new-task__button_cancel modal__button modal__button_cancel">Отмена</button>
                             </form>
                         </div>
                     </div>

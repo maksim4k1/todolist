@@ -15,7 +15,74 @@
     left: 0;
     background: var(--main-dark-bg);
     overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
     z-index: 100;
+}
+.modal__content {
+    max-width: 500px;
+    width: 100%;
+    padding: 17px 20px 24px;
+    display: flex;
+    flex-flow: wrap;
+    gap: 14px;
+    background: var(--main-bg-white);
+    border-radius: 4px;
+}
+.modal__title {
+    width: calc(100% - 38px);
+    font-size: 20px;
+}
+.modal__close-button {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.modal__close-button>svg>path{
+    transition: fill 0.3s;
+}
+@media (hover){
+    .modal__close-button:hover>svg>path{
+        fill: var(--main-blue);
+    }
+}
+.modal__form {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+.modal__input, .modal__textarea {
+    width: 100%;
+    padding: 9px 15px;
+    margin: 0 0 17px;
+    display: block;
+    border: 1px solid var(--main-light-blue);
+    border-radius: 4px;
+}
+.modal__textarea {
+    height: 100px;
+    margin: 0 0 19px;
+    resize: none;
+}
+.modal__button {
+    height: 40px;
+    margin: 0 0 10px;
+    color: var(--main-white);
+    background: var(--main-light-blue);
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.modal__button_cancel {
+    margin: 0;
+    background: var(--main-bg-grey);
+}
+
+.open-modal{
+    opacity: 1;
+    visibility: visible;
 }
 .body-overflow{
     overflow: hidden;
@@ -134,6 +201,7 @@
     color: var(--main-blue);
     font-size: 14px;
     text-decoration-line: underline;
+    border-radius: 4px;
     transition: color 0.3s;
 }
 .todolist__task-button>svg {
@@ -153,6 +221,16 @@
     }
     .todolist__task-button_delete:hover>svg>path{
         fill: var(--main-red);
+    }
+}
+
+/* MODAL */
+@media (hover){
+    .add-new-task__button:hover{
+        background: var(--main-blue);
+    }
+    .add-new-task__button_cancel:hover{
+        background: var(--main-grey-hover);
     }
 }
 
