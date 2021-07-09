@@ -234,6 +234,12 @@
     .add-new-task__button_cancel:hover{
         background: var(--main-grey-hover);
     }
+    .edit-task__button:hover{
+        background: var(--main-blue);
+    }
+    .edit-task__button_cancel:hover{
+        background: var(--main-grey-hover);
+    }
 }
 
 /* MEDIA */
