@@ -33,7 +33,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit; font-weight: 400;}
 body{
 	background: var(--main-light-blue);
 	color: var(--main-black);
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Nunito', sans-serif;
 }
 
 /* Стили контейнеров */
