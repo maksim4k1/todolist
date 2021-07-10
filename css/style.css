@@ -1,0 +1,314 @@
+/* DEFAULT */
+.title{
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--main-white)
+}
+.modal{
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--main-dark-bg);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 100;
+}
+.modal__content {
+    max-width: 500px;
+    width: 100%;
+    padding: 17px 20px 24px;
+    display: flex;
+    flex-flow: wrap;
+    gap: 14px;
+    background: var(--main-bg-white);
+    border-radius: 4px;
+}
+.modal__title {
+    width: calc(100% - 38px);
+    font-size: 20px;
+}
+.modal__close-button {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.modal__close-button>svg>path{
+    transition: fill 0.3s;
+}
+@media (hover){
+    .modal__close-button:hover>svg>path{
+        fill: var(--main-blue);
+    }
+}
+.modal__form {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+.modal__input, .modal__textarea {
+    width: 100%;
+    padding: 9px 15px;
+    margin: 0 0 17px;
+    display: block;
+    border: 1px solid var(--main-light-blue);
+    border-radius: 4px;
+}
+.modal__textarea {
+    height: 100px;
+    margin: 0 0 10px;
+    resize: none;
+}
+.modal__error{
+    margin: 0 0 16px;
+    color: var(--main-red);
+    font-size: 12px;
+    font-weight: 600;
+}
+.modal__button {
+    height: 40px;
+    margin: 0 0 10px;
+    color: var(--main-white);
+    background: var(--main-light-blue);
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.modal__button_cancel {
+    margin: 0;
+    background: var(--main-bg-grey);
+}
+
+.open-modal{
+    opacity: 1;
+    visibility: visible;
+}
+.body-overflow{
+    overflow: hidden;
+}
+
+/* TODOLIST */
+.content {
+    padding: 54px 0 129px;
+}
+.todolist__navigation {
+    margin: 0 0 86px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todolist__logo {
+    font-size: 60px;
+}
+.todolist__name {
+    font-size: 18px;
+}
+.todolist__button {
+    width: 287px;
+    height: 40px;
+    margin: 0 0 19px;
+    font-weight: 600;
+    background: var(--main-yellow);
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+@media (hover) {
+    .todolist__button:hover{
+        background: var(--main-yellow-hover);
+    }
+}
+.todolist__title {
+    margin: 0 0 36px;
+    font-size: 22px;
+}
+.todolist__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 19px;
+    grid-row-gap: 19px;
+}
+.todolist__task {
+    height: min-content;
+    display: flex;
+    flex-flow: column;
+    gap: 18px;
+    padding: 15px 18px 15px 20px;
+    background: var(--main-bg-white);
+    border-radius: 4px;
+}
+.todolist__content {
+    display: flex;
+    column-gap: 13px;
+    flex-flow: wrap;
+}
+.todolist__content-title {
+    width: calc(100% - 35px);
+    margin: 0 0 7px;
+    font-weight: 900;
+}
+.todolist__content-text {
+    width: calc(100% - 35px);
+    order: 2;
+}
+.todolist__done-input {
+    display: none;
+}
+.todolist__done-input:checked ~ .todolist__done-button::before{
+    opacity: 1;
+}
+.todolist__done-input:checked ~ .todolist__content-title{
+    text-decoration-line: line-through;
+}
+.todolist__done-button {
+    width: 22px;
+    height: 22px;
+    display: block;
+    order: 1;
+    position: relative;
+    border: 1px solid var(--main-light-blue);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+@media (hover){
+    .todolist__done-button:hover{
+        border-color: var(--main-blue);
+    }
+}
+.todolist__done-button::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-image: url(../img/svg/checked-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.todolist__task-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todolist__task-button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--main-blue);
+    font-size: 14px;
+    text-decoration-line: underline;
+    border-radius: 4px;
+    transition: color 0.3s;
+}
+.todolist__task-button>svg {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+.todolist__task-button>svg>path{
+    transition: fill 0.3s;
+}
+@media (hover) {
+    .todolist__task-button:hover{
+        color: var(--main-light-blue);
+    }
+    .todolist__task-button:hover>svg>path{
+        fill: var(--main-light-blue);
+    }
+    .todolist__task-button_delete-task:hover>svg>path{
+        fill: var(--main-red);
+    }
+}
+
+/* MODAL */
+.delete-task__button_red{
+    background: var(--main-red);
+}
+
+@media (hover){
+    .add-new-task__button:hover{
+        background: var(--main-blue);
+    }
+    .edit-task__button:hover{
+        background: var(--main-blue);
+    }
+    .delete-task__button_red:hover{
+        background: var(--main-red-hover);
+    }
+    .add-new-task__button_cancel:hover, .edit-task__button_cancel:hover, .delete-task__button_cancel:hover{
+        background: var(--main-grey-hover);
+    }
+}
+
+/* MEDIA */
+@media screen and (max-width: 768px) {
+    .content{
+        padding: 17px 0 19px;
+    }
+    .todolist__navigation{
+        margin: 0 0 31px;
+        flex-flow: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .todolist__logo{
+        font-size: 40px;
+    }
+    .todolist__button{
+        margin: 0;
+    }
+    .todolist__title{
+        margin: 0 0 20px;
+        font-size: 18px;
+    }
+    .todolist__list{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ANIMATION */
+.new-task-animation{
+    animation-name: new-task-animation;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes new-task-animation{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.delete-task-animation{
+    animation-name: delete-task-animation;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes delete-task-animation{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0);
+    }
+}

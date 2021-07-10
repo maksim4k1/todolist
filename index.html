@@ -20,7 +20,67 @@
 <body>
     <!----------------------------------------------S T A R T   C O N T E N T-------------------------------------------->
     <main class="content">
-        
+        <section class="todolist">
+            <div class="todolist__container container">
+                <nav class="todolist__navigation">
+                    <div class="todolist__info">
+                        <h1 class="todolist__logo title">Todolist</h1>
+                        <h4 class="todolist__name title">By name surname</h4>
+                    </div>
+                    <button class="todolist__button">Создать новую задачу</button>
+                    <div class="add-new-task modal">
+                        <div class="add-new-task__content modal__content">
+                            <h5 class="add-new-task__title modal__title">Создать задачу</h5>
+                            <button class="add-new-task__close-button modal__close-button">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
+                                </svg>
+                            </button>
+                            <form class="add-new-task__form modal__form">
+                                <input type="task-title" class="add-new-task__input modal__input" placeholder="заголовок">
+                                <textarea name="task-deskription" class="add-new-task__textarea modal__textarea" placeholder="описание"></textarea>
+                                <div class="add-new-task__error modal__error"></div>
+                                <button class="add-new-task__button modal__button">Сохранить</button>
+                                <button class="add-new-task__button add-new-task__button_cancel modal__button modal__button_cancel" type="reset">Отмена</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                <h2 class="todolist__title title">Список задач</h2>
+                <ul class="todolist__list"></ul>
+            </div>
+            <div class="edit-task modal">
+                <div class="edit-task__content modal__content">
+                    <h5 class="edit-task__title modal__title">Изменить задачу</h5>
+                    <button class="edit-task__close-button modal__close-button">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
+                        </svg>
+                    </button>
+                    <form class="edit-task__form modal__form">
+                        <input type="task-title" class="edit-task__input modal__input" placeholder="заголовок">
+                        <textarea name="task-deskription" class="edit-task__textarea modal__textarea" placeholder="описание"></textarea>
+                        <div class="edit-task__error modal__error"></div>
+                        <button class="edit-task__button modal__button">Сохранить</button>
+                        <button class="edit-task__button edit-task__button_cancel modal__button modal__button_cancel" type="reset">Отмена</button>
+                    </form>
+                </div>
+            </div>
+            <div class="delete-task modal">
+                <div class="delete-task__content modal__content">
+                    <h5 class="delete-task__title modal__title">Вы уверены что хотите удалить задачу навсегда?</h5>
+                    <button class="delete-task__close-button modal__close-button">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
+                        </svg>
+                    </button>
+                    <div class="delete-task__form modal__form">
+                        <button class="delete-task__button modal__button delete-task__button_red">Удалить</button>
+                        <button class="delete-task__button delete-task__button_cancel modal__button modal__button_cancel" type="reset">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!----------------------------------------------E N D   C O N T E N T--------------------------------------------->
 </body>
