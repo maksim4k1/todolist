@@ -210,6 +210,16 @@ function addEventListenerForTaskButtons() {
             textarea.value = document.querySelector(`li[id$="${taskID}"] .todolist__content-text`).textContent;
         });
     });
+
+    // Delete task modal
+    let deleteTaskButtons = document.querySelectorAll(".todolist__task-button_delete-task");
+
+    deleteTaskButtons.forEach(item => {
+        item.addEventListener("click", function(){
+            toggleModal("delete-task");
+            taskID = this.parentNode.parentNode.getAttribute("id");
+        });
+    });
 }
 
 // Open/Close modal
