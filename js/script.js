@@ -1,3 +1,6 @@
+// Values
+let taskID;
+
 // Task array
 let tasksList;
 if(localStorage.tasksList !== undefined){
@@ -210,7 +213,7 @@ function addEventListenerForTaskButtons() {
             textarea.value = document.querySelector(`li[id$="${taskID}"] .todolist__content-text`).textContent;
         });
     });
-
+    
     // Delete task modal
     let deleteTaskButtons = document.querySelectorAll(".todolist__task-button_delete-task");
 
@@ -257,3 +260,9 @@ function clearForm(className) {
 
     input.value = textarea.value = error.innerHTML = "";
 }
+
+// Window onload
+window.addEventListener("load", function () {
+    renderTasks();
+    addEventListenerForCheckboxes();
+});
