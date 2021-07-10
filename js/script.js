@@ -129,6 +129,25 @@ function createTask(object) {
     return block;
 }
 
+// Add event listener for task buttons function
+function addEventListenerForTaskButtons() {
+    // Edit task modal
+    let editTaskButtons = document.querySelectorAll(".todolist__task-button_edit-task");
+
+    editTaskButtons.forEach(item => {
+        item.addEventListener("click", function(){
+            let input = document.querySelector(".edit-task__input");
+            let textarea = document.querySelector(".edit-task__textarea");
+
+            toggleModal("edit-task");
+            taskID = this.parentNode.parentNode.getAttribute("id");
+
+            input.value = document.querySelector(`li[id$="${taskID}"] .todolist__content-title`).textContent;
+            textarea.value = document.querySelector(`li[id$="${taskID}"] .todolist__content-text`).textContent;
+        });
+    });
+}
+
 // Open/Close modal
 function toggleModal(modalClass) {
     let modalBlock = document.querySelector(`.${modalClass}`);
