@@ -129,6 +129,39 @@ editTaskButtonCancel.addEventListener("click", function() {
     toggleModal("edit-task");
 });
 
+// Delete task modal
+const deleteTaskCloseButton = document.querySelector(".delete-task__close-button");
+const deleteTaskBlock = document.querySelector(".delete-task");
+
+deleteTaskCloseButton.addEventListener("click", function(){
+    toggleModal("delete-task");
+});
+deleteTaskBlock.addEventListener("click", function (event) {
+    if(event.target === event.currentTarget){
+        toggleModal("delete-task");
+    }    
+});
+
+const deleteTaskButton = document.querySelector(".delete-task__button_red");
+const deleteTaskButtonCancel = document.querySelector(".delete-task__button_cancel");
+
+deleteTaskButton.addEventListener("click", function () {
+    let deletedBlock = document.querySelector(`li[id$="${taskID}"]`);
+
+    deletedBlock.classList.add("delete-task-animation");
+    setTimeout(function () {
+        deletedBlock.classList.remove("delete-task-animation");
+        tasksList.splice(tasksList.indexOf(tasksList.find(task => task.id == taskID)), 1);
+        renderTasks();
+    }, 700);
+    toggleModal("delete-task");
+})
+
+deleteTaskButtonCancel.addEventListener("click", function () {
+    renderTasks();
+    toggleModal("delete-task");
+})
+
 // Create new task function
 function createTask(object) {
     let checked = "";
