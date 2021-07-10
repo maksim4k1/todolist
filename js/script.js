@@ -40,6 +40,51 @@ addNewTaskBlock.addEventListener("click", function (event) {
     }    
 });
 
+// Validate for add-task form
+const addNewTaskForm = document.querySelector(".add-new-task__form");
+const addNewTaskButtonCancel = document.querySelector(".add-new-task__button_cancel");
+
+addNewTaskForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let input = document.querySelector(".add-new-task__input");
+    let textarea = document.querySelector(".add-new-task__textarea");
+    let error = document.querySelector(".add-new-task__error");
+    if(!input.value.trim()){
+        error.innerHTML = "Введите заголовок!";
+        return;
+    }
+    if(tasksList.length === 0){
+        tasksList.unshift({
+            title: input.value,
+            deskription: textarea.value,
+            id: 0,
+            checked: false
+        });
+    } else{
+        tasksList.unshift({
+            title: input.value,
+            deskription: textarea.value,
+            id: (tasksList[0].id) + 1,
+            checked: false
+        });
+    }
+
+    clearForm("add-new-task");
+    renderTasks();
+    toggleModal("add-new-task");
+
+    let addedBlock = document.querySelector(`li[id$="${tasksList[0].id}"]`);
+
+    addedBlock.classList.add("new-task-animation");
+    setTimeout(function () {
+        addedBlock.classList.remove("new-task-animation");
+    }, 1000);
+});
+
+addNewTaskButtonCancel.addEventListener("click", function() {
+    toggleModal("add-new-task");
+});
+
 // Create new task function
 function createTask(object) {
     let checked = "";
