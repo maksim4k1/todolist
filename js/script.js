@@ -1,3 +1,11 @@
+// Task array
+let tasksList;
+if(localStorage.tasksList !== undefined){
+    tasksList = JSON.parse(localStorage.tasksList);
+} else{
+    tasksList = [];
+}
+
 // Add task modal
 const addNewTaskButton = document.querySelector(".todolist__button");
 const addNewTaskCloseButton = document.querySelector(".add-new-task__close-button");
