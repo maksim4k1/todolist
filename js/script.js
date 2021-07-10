@@ -98,6 +98,37 @@ editTaskBlock.addEventListener("click", function (event) {
     }
 });
 
+// Validate edit-task form
+const editTaskForm = document.querySelector(".edit-task__form");
+const editTaskButtonCancel = document.querySelector(".edit-task__button_cancel");
+
+editTaskForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let input = document.querySelector(".edit-task__input");
+    let textarea = document.querySelector(".edit-task__textarea");
+    let error = document.querySelector(".edit-task__error");
+
+    if(!input.value.trim()){
+        error.innerHTML = "Введите заголовок!";
+        return;
+    }
+    
+    tasksList.splice(tasksList.indexOf(tasksList.find(task => task.id == taskID)), 1, {
+        title: input.value,
+        deskription: textarea.value,
+        id: taskID,
+        checked: false
+    });
+
+    clearForm("edit-task");
+    renderTasks();
+    toggleModal("edit-task"); 
+});
+
+editTaskButtonCancel.addEventListener("click", function() {
+    toggleModal("edit-task");
+});
+
 // Create new task function
 function createTask(object) {
     let checked = "";
