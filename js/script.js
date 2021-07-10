@@ -222,6 +222,24 @@ function addEventListenerForTaskButtons() {
     });
 }
 
+// Add event listener for checkboxes function
+function addEventListenerForCheckboxes() {
+    let checkboxLabels = document.querySelectorAll(".todolist__done-button");
+    checkboxLabels.forEach(item => {
+        item.addEventListener("click", function () {
+            let taskID = Number(this.parentNode.parentNode.getAttribute("id"));
+            let taskObject = tasksList.indexOf(tasksList.find(task => task.id == taskID));
+            if(tasksList[taskObject].checked === false){
+                tasksList[taskObject].checked = true;
+                renderTasks();
+            } else{
+                tasksList[taskObject].checked = false;
+                renderTasks();
+            }
+        })
+    });
+}
+
 // Open/Close modal
 function toggleModal(modalClass) {
     let modalBlock = document.querySelector(`.${modalClass}`);
