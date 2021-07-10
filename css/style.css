@@ -277,3 +277,38 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ANIMATION */
+.new-task-animation{
+    animation-name: new-task-animation;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes new-task-animation{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.delete-task-animation{
+    animation-name: delete-task-animation;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes delete-task-animation{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0);
+    }
+}
