@@ -14,3 +14,12 @@ addNewTaskBlock.addEventListener("click", function (event) {
         toggleModal("add-new-task");
     }    
 });
+
+// Open/Close modal
+function toggleModal(modalClass) {
+    let modalBlock = document.querySelector(`.${modalClass}`);
+    modalBlock.classList.toggle("open-modal");
+    if(modalClass !== "delete-task"){
+        clearForm(modalClass);
+    }
+}
