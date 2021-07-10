@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>TODOLIST</title>
+    <title>TODOLIST | Приложение для ведения списка дел или задач</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="">
+    <meta name="description" content="Приложение для ведения списка дел или задач">
     <!-- ====================S C R I P T===================== -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script defer src="js/script.js"></script>
     <!-- ====================F O N T==================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,97 +15,13 @@
     <!-- ====================S T Y L E==================== -->
     <link href="css/custom.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="img/svg/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/webp/logo.webp" type="image/x-icon">
 </head>
 <body>
     <!----------------------------------------------S T A R T   C O N T E N T-------------------------------------------->
     <main class="content">
-        <section class="todolist">
-            <div class="todolist__container container">
-                <nav class="todolist__navigation">
-                    <div class="todolist__info">
-                        <h1 class="todolist__logo title">Todolist</h1>
-                        <h4 class="todolist__name title">By name surname</h4>
-                    </div>
-                    <button class="todolist__button">Создать новую задачу</button>
-                    <div class="add-new-task modal">
-                        <div class="add-new-task__content modal__content">
-                            <h5 class="add-new-task__title modal__title">Создать задачу</h5>
-                            <button class="add-new-task__close-button modal__close-button">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
-                                </svg>
-                            </button>
-                            <form class="add-new-task__form modal__form">
-                                <input type="task-title" class="add-new-task__input modal__input" placeholder="заголовок">
-                                <textarea name="task-deskription" class="add-new-task__textarea modal__textarea" placeholder="описание"></textarea>
-                                <div class="add-new-task__error modal__error"></div>
-                                <button class="add-new-task__button modal__button">Сохранить</button>
-                                <button class="add-new-task__button add-new-task__button_cancel modal__button modal__button_cancel" type="reset">Отмена</button>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
-                <h2 class="todolist__title title">Список задач</h2>
-                <ul class="todolist__list">
-                    <li class="todolist__task">
-                        <div class="todolist__content">
-                            <input type="checkbox" name="done" id="task-checkbox-1" class="todolist__done-input">
-                            <label for="task-checkbox-1" class="todolist__done-button"></label>
-                            <h3 class="todolist__content-title">Заголовок задачи</h3>
-                            <p class="todolist__content-text">Более длинное описание задачи на несолько строчек, может быть даже на 4. Более длинное описание задачи на несолько строчек, может быть даже на 4</p>
-                        </div>
-                        <div class="todolist__task-buttons">
-                            <button class="todolist__task-button todolist__task-button_edit-task">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 11.8771V15.0021H3.125L12.3417 5.78542L9.21667 2.66042L0 11.8771ZM14.7583 3.36875C15.0833 3.04375 15.0833 2.51875 14.7583 2.19375L12.8083 0.24375C12.4833 -0.08125 11.9583 -0.08125 11.6333 0.24375L10.1083 1.76875L13.2333 4.89375L14.7583 3.36875Z" fill="#2A5B94"/>
-                                </svg>
-                                изменить
-                            </button>
-                            <button class="todolist__task-button todolist__task-button_delete-task">
-                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.00008 13.8333C1.00008 14.75 1.75008 15.5 2.66675 15.5H9.33342C10.2501 15.5 11.0001 14.75 11.0001 13.8333V3.83333H1.00008V13.8333ZM11.8334 1.33333H8.91675L8.08342 0.5H3.91675L3.08342 1.33333H0.166748V3H11.8334V1.33333Z" fill="black"/>
-                                </svg>                                    
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="edit-task modal">
-                <div class="edit-task__content modal__content">
-                    <h5 class="edit-task__title modal__title">Изменить задачу</h5>
-                    <button class="edit-task__close-button modal__close-button">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
-                        </svg>
-                    </button>
-                    <form class="edit-task__form modal__form">
-                        <input type="task-title" class="edit-task__input modal__input" placeholder="заголовок">
-                        <textarea name="task-deskription" class="edit-task__textarea modal__textarea" placeholder="описание"></textarea>
-                        <div class="edit-task__error modal__error"></div>
-                        <button class="edit-task__button modal__button">Сохранить</button>
-                        <button class="edit-task__button edit-task__button_cancel modal__button modal__button_cancel" type="reset">Отмена</button>
-                    </form>
-                </div>
-            </div>
-            <div class="delete-task modal">
-                <div class="delete-task__content modal__content">
-                    <h5 class="delete-task__title modal__title">Вы уверены что хотите удалить задачу навсегда?</h5>
-                    <button class="delete-task__close-button modal__close-button">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="black"/>
-                        </svg>
-                    </button>
-                    <div class="delete-task__form modal__form">
-                        <button class="delete-task__button modal__button delete-task__button_red">Удалить</button>
-                        <button class="delete-task__button delete-task__button_cancel modal__button modal__button_cancel" type="reset">Отмена</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
     </main>
     <!----------------------------------------------E N D   C O N T E N T--------------------------------------------->
-    <!-- ====================S C R I P T===================== -->
-    <script src="js/script.js"></script>
 </body>
 </html>
