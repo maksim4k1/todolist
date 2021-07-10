@@ -140,3 +140,29 @@
         fill: var(--main-red);
     }
 }
+
+/* MEDIA */
+@media screen and (max-width: 768px) {
+    .content{
+        padding: 17px 0 19px;
+    }
+    .todolist__navigation{
+        margin: 0 0 31px;
+        flex-flow: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .todolist__logo{
+        font-size: 40px;
+    }
+    .todolist__button{
+        margin: 0;
+    }
+    .todolist__title{
+        margin: 0 0 20px;
+        font-size: 18px;
+    }
+    .todolist__list{
+        grid-template-columns: 1fr;
+    }
+}
