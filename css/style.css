@@ -232,6 +232,26 @@
     }
 }
 
+/* MODAL */
+.delete-task__button_red{
+    background: var(--main-red);
+}
+
+@media (hover){
+    .add-new-task__button:hover{
+        background: var(--main-blue);
+    }
+    .edit-task__button:hover{
+        background: var(--main-blue);
+    }
+    .delete-task__button_red:hover{
+        background: var(--main-red-hover);
+    }
+    .add-new-task__button_cancel:hover, .edit-task__button_cancel:hover, .delete-task__button_cancel:hover{
+        background: var(--main-grey-hover);
+    }
+}
+
 /* MEDIA */
 @media screen and (max-width: 768px) {
     .content{
