@@ -85,6 +85,19 @@ addNewTaskButtonCancel.addEventListener("click", function() {
     toggleModal("add-new-task");
 });
 
+// Edit task modal
+const editTaskCloseButton = document.querySelector(".edit-task__close-button");
+const editTaskBlock = document.querySelector(".edit-task");
+
+editTaskCloseButton.addEventListener("click", function(){
+    toggleModal("edit-task");
+});
+editTaskBlock.addEventListener("click", function (event) {
+    if(event.target === event.currentTarget){
+        toggleModal("edit-task");
+    }
+});
+
 // Create new task function
 function createTask(object) {
     let checked = "";
