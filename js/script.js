@@ -6,6 +6,23 @@ if(localStorage.tasksList !== undefined){
     tasksList = [];
 }
 
+// Render tasks function
+function renderTasks() {
+    let todoList = document.querySelector(".todolist__list");
+    todoList.innerHTML = "";
+    if(tasksList.length !== 0){
+        tasksList.forEach(item => {
+            todoList.innerHTML += createTask(item);
+        });
+    } else{
+        todoList.innerHTML = `<h2 class="todolist__title title">Список задач пуст</h2>`;
+    }
+    addEventListenerForTaskButtons();
+    addEventListenerForCheckboxes();
+
+    localStorage.setItem("tasksList", JSON.stringify(tasksList));
+}
+
 // Add task modal
 const addNewTaskButton = document.querySelector(".todolist__button");
 const addNewTaskCloseButton = document.querySelector(".add-new-task__close-button");
