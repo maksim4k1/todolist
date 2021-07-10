@@ -23,3 +23,12 @@ function toggleModal(modalClass) {
         clearForm(modalClass);
     }
 }
+
+// Clear form function
+function clearForm(className) {
+    let input = document.querySelector(`.${className}__input`);
+    let textarea = document.querySelector(`.${className}__textarea`);
+    let error = document.querySelector(`.${className}__error`);
+
+    input.value = textarea.value = error.innerHTML = "";
+}
